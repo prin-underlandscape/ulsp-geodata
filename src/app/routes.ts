@@ -1,4 +1,5 @@
 import { Route } from '@angular/router';
+import { AuthGuard } from '@auth0/auth0-angular';
 
 export const ROUTES: Route[] = [
   {
@@ -8,7 +9,8 @@ export const ROUTES: Route[] = [
   },
   {
     path: 'profile',
-    loadComponent: () => import('./features/profile/profile.component').then(mod => mod.ProfileComponent)
+    loadComponent: () => import('./features/profile/profile.component').then(mod => mod.ProfileComponent),
+    canActivate: [AuthGuard]
   },
   {
     path: 'public',
@@ -16,11 +18,13 @@ export const ROUTES: Route[] = [
   },
   {
     path: 'protected',
-    loadComponent: () => import('./features/protected/protected.component').then(mod => mod.ProtectedComponent)
+    loadComponent: () => import('./features/protected/protected.component').then(mod => mod.ProtectedComponent),
+    canActivate: [AuthGuard]
   },
   {
     path: 'admin',
-    loadComponent: () => import('./features/admin/admin.component').then(mod => mod.AdminComponent)
+    loadComponent: () => import('./features/admin/admin.component').then(mod => mod.AdminComponent),
+    canActivate: [AuthGuard]
   },
   {
     path: 'callback',
