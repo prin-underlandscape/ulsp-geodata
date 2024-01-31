@@ -14,7 +14,6 @@ import { PageFooterComponent } from './page-footer.component';
       <div class="page-layout__content">
         <ng-content></ng-content>
       </div>
-      <app-footer></app-footer>
     </div>
   `,
 })

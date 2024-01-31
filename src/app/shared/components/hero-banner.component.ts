@@ -13,15 +13,6 @@ import { Component } from '@angular/core';
         This is a sample application that demonstrates the authentication flow
         for Angular apps using <strong>Auth0</strong>.
       </p>
-      <a
-        id="code-sample-link"
-        class="button button--secondary"
-        href="https://developer.auth0.com/resources/code-samples/spa/angular/basic-authentication/v14-typescript-standalone-components"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Check out the Angular code sample →
-      </a>
     </div>
   `,
 })
