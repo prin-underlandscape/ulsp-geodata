@@ -1,8 +1,10 @@
+<span *ngIf="user$ | async as user">
 <div class="nav-bar__tabs">
   <ng-container *ngIf="isAuthenticated$ | async">
-    <app-nav-bar-tab path="/profile" label="Profile"></app-nav-bar-tab>
-    <app-nav-bar-tab path="/public" label="Public"></app-nav-bar-tab>
-    <app-nav-bar-tab path="/protected" label="Protected"></app-nav-bar-tab>
-    <app-nav-bar-tab path="/admin" label="Admin"></app-nav-bar-tab>
+    <app-nav-bar-tab path="/profile" label="Profile" *ngIf="hasProfile(user['https://ulsp/roles'])"></app-nav-bar-tab>
+    <app-nav-bar-tab path="/public" label="Public" *ngIf="canDownload(user['https://ulsp/roles'])"></app-nav-bar-tab>
+    <app-nav-bar-tab path="/protected" label="Protected" *ngIf="canUpload(user['https://ulsp/roles'])"></app-nav-bar-tab>
+    <app-nav-bar-tab path="/admin" label="Admin" *ngIf="canAdmin(user['https://ulsp/roles'])"></app-nav-bar-tab>
   </ng-container>
 </div>
+</span>
