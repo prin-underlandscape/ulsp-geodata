@@ -2,10 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { MessageService } from '@app/core';
 import { CodeSnippetComponent } from 'src/app/shared/components/code-snippet.component';
 import { PageLayoutComponent } from 'src/app/shared/components/page-layout.component';
+import { MapComponent } from 'src/app/features/public/map/map.component';
+import { DescriptionComponent } from 'src/app/features/public/description/description.component';
+import { QueryComponent } from 'src/app/features/public/query/query.component';
 
 @Component({
   standalone: true,
-  imports: [PageLayoutComponent, CodeSnippetComponent],
+  imports: [PageLayoutComponent, CodeSnippetComponent, MapComponent, DescriptionComponent, QueryComponent],
   selector: 'app-public',
   templateUrl: './public.component.html',
 })
